@@ -1,122 +1,118 @@
-# Methods in Ruby
+# Functions in Python
 
 ##Overview
 
-In this lesson, we'll introduce methods, distinguish them from data types, and cover how to create and execute them in your Ruby program.
+In this lesson you'll learn one of the most important concepts in the Python language, or any other programming language for that matter, so pay attention!
+This lesson shows you how to create and execute functions in Python.
 
 ## Objectives
 
-1. Describe how methods can define new routines and procedures for our code.
-2. Define a method with the `def` keyword, supply the method's body, and close the method definition with the `end` keyword.
-3. Invoke a method by calling it by name.
+1. Learn how to use functions to create reusable code that can be called multiple times
+2. See how functions are used to encapsulate a piece of code's logic and make your code expressive
+2. Learn how to define functions with the `def` keyword
+3. Learn how to call a function
 
-### Video
-<iframe width="560" height="315" src="https://www.youtube.com/embed/njJB-fuE-qE?rel=0&modestbranding=1" frameborder="0" allowfullscreen></iframe><p><a href="https://www.youtube.com/watch?v=njJB-fuE-qE">Introduction to Ruby Methods</a></p>
+### Why Use Functions
 
-### Why Use Methods
-
-Methods define a new thing that your program can do. Variables are a mechanism to teach your Ruby program about data; methods teach your Ruby program about a new routine or behavior it can use. Variables are like nouns, methods are like verbs.
+When you want to store data in a Python program so that you can refer to it again, you use variables; when you want to store behavior in a Python program so that you can execute it again, you use functions. Variables are like nouns, functions are like verbs.
 
 For example, imagine needing to say "Hello World!" ten times. You might do something like this:
 
-```ruby
+```python
 phrase = "Hello World!"
-puts phrase
-puts phrase
-puts phrase
-puts phrase
-puts phrase
-puts phrase
-puts phrase
-puts phrase
-puts phrase
-puts phrase
+print phrase
+print phrase
+print phrase
+print phrase
+print phrase
+print phrase
+print phrase
+print phrase
+print phrase
+print phrase
 ```
 
-That works pretty well. You made use of a variable to encapsulate the data you wanted to print and then the next ten lines literally print the phrase.
+That does work, but it's very repetitive. You made use of a variable to encapsulate the data you wanted to print and then the next ten lines literally print the phrase.
 
 Now imagine later in your program you again want to say "Hello World!" ten times. The entire program would look something like this:
 
-```ruby
+```python
 phrase = "Hello World!"
-puts phrase
-puts phrase
-puts phrase
-puts phrase
-puts phrase
-puts phrase
-puts phrase
-puts phrase
-puts phrase
-puts phrase
+print phrase
+print phrase
+print phrase
+print phrase
+print phrase
+print phrase
+print phrase
+print phrase
+print phrase
+print phrase
 
 # ... The rest of the program
 
-puts phrase
-puts phrase
-puts phrase
-puts phrase
-puts phrase
-puts phrase
-puts phrase
-puts phrase
-puts phrase
-puts phrase
+print phrase
+print phrase
+print phrase
+print phrase
+print phrase
+print phrase
+print phrase
+print phrase
+print phrase
+print phrase
 ```
 
-We have to repeat the literal procedure for printing the value of `phrase` ten times. If variables encapsulate and abstract data, methods encapsulate and abstract procedure. Instead of literally `puts phrase` ten times, we can instead build a method—a little machine that does exactly that whenever we want.
+We have to repeat the code for printing the value of `phrase` ten times. Remember, variables store data, functions store behavior. Instead of repeating `print phrase` ten times, we should build a function for it. Think of this function as a little mini program that you can execute as many times as you want, but by calling it with code.
 
-The method would look like this:
+The function looks like this:
 
-```ruby
-def say_hello_world_ten_times
+```python
+def say_hello_world_ten_times():
   phrase = "Hello World!"
-  puts phrase
-  puts phrase
-  puts phrase
-  puts phrase
-  puts phrase
-  puts phrase
-  puts phrase
-  puts phrase
-  puts phrase
-  puts phrase
-end
+  print phrase
+  print phrase
+  print phrase
+  print phrase
+  print phrase
+  print phrase
+  print phrase
+  print phrase
+  print phrase
+  print phrase
 ```
-Now, when we use the bareword `say_hello_world_ten_times` in our program, it will invoke the method, running the code within the method. So the script above, saying hello ten times, doing other things, then saying hello ten times again could be rewritten as this:
+Now, when we add code to call it by using it's name followed by two parentheses `say_hello_world_ten_times()` in our program, it will invoke the function, running the code within the function. Now that we know about functions, let's revisit the script above that says hello 10 times, then does something else before saying hello 10 times yet again.
 
-```ruby
-def say_hello_world_ten_times
+```python
+def say_hello_world_ten_times():
   phrase = "Hello World!"
-  puts phrase
-  puts phrase
-  puts phrase
-  puts phrase
-  puts phrase
-  puts phrase
-  puts phrase
-  puts phrase
-  puts phrase
-  puts phrase
-end
+  print phrase
+  print phrase
+  print phrase
+  print phrase
+  print phrase
+  print phrase
+  print phrase
+  print phrase
+  print phrase
+  print phrase
 
-say_hello_world_ten_times
+say_hello_world_ten_times()
 
 # ... The rest of the program
 
-say_hello_world_ten_times
+say_hello_world_ten_times()
 ```
 
-That's way cleaner. We define the abstraction, or the machine, `say_hello_world_ten_times` once, but can "call" or "invoke" it—make it run—as many times as we want. Let's look at methods in greater detail.
+That's way cleaner. We define the abstraction, or the mini program, `say_hello_world_ten_times` once, but can "call" or "invoke" it (make it run) as many times as we want. Let's look at functions in a bit more detail.
 
-### Defining a Method
+### Defining a Function
 
-You can define a method in Ruby with the `def` keyword. A method's name can begin with any lowercase letter. Here's a quick example:
+You can define a function in Python with the `def` keyword. A method's name can begin with any lowercase letter. Here's a quick example:
 
-```ruby
-def greeting # Method Signature
-  puts "Hello World" # Method Body
-end # Method Closing
+```python
+def greeting(): # Method Signature
+  print "Hello World" # Method Body
 ```
 
 That first line, `def greeting`, is called the method signature, it defines the basic properties of the method including the name of the method, `greeting`.
