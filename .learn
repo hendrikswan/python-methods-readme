@@ -1,0 +1,14 @@
+tags:
+  - readme
+  - methods
+languages:
+  - python
+resources: 0
+track:
+  - web development
+topic:
+  - python
+unit:
+  - methods and variables
+lesson:
+  - defining, calling, scope, arguments
