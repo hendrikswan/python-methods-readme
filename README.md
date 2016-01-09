@@ -140,7 +140,7 @@ def greeting(): # this is the function's signature
     print 'bye'   # included in the function's block
 
 print 'hi there' # not included in the function's block
-
+```
 
 Because both `print 'hello'`, and `print 'bye'` are nested on a deeper level than the function signature, both lines are deemed as part of the function definition. Because `print 'hi there'` is on the same level as the function signature, it's deemed as a sibling code block, and therefore not part of the function.
 
@@ -153,94 +153,88 @@ Here's an example of using illegal indentation for a function definition. Becaus
 def greeting(): # this is the function's signature
     print 'hello' # included in the function's block
   print 'bye'   # causes a syntax error
-
-Don't worry if this sounds awfully technical and difficult, you'll get used to it very quickly. It's a few simple rules to be aware of, and we've handled the most tricky of the rules already.
-
-
-
-### Invoking a Method
-
-Once you define a method, you can execute the method whenever you want by using the method name in your code.
-
-```ruby
-def greeting
-  puts "Hello World"
-end
-
-greeting # Executing the method by name
-#> "Hello World"
-
-greeting # Executing the method again
-#> "Hello World"
 ```
 
-Try it out. Make a new file called `greeting.rb` (you can use: `touch greeting.rb` from your terminal). Put the following code in it:
+Don't worry if this sounds awfully technical and difficult, you'll get used to it very quickly.
+It's a few simple rules to be aware of, and we've handled most of the tricky syntax already.
 
-File: `greeting.rb`
 
-```ruby
-def greeting
-  puts "Hello World"
-end
+### Invoking a Function
+
+Once you define a function, you can execute the function whenever you want by using the function name in your code, followed by parameters.
+
+```python
+def greeting():
+    print 'hello'
+
+
+
+greeting() # Executing the function
+#> "hello"
+
+greeting() # Executing the function again
+#> "hello"
 ```
 
-Save your file and run it with `ruby greeting.rb`. You'll see:
+Try it out. Make a new file called `greeting.py` (you can use: `touch greeting.py` from your terminal). Put the following code in it:
+
+File: `greeting.py`
+
+```python
+def greeting():
+  print "hello"
+```
+
+Save your file and run it with `python greeting.py`. You'll see:
 
 ```bash
-$ ruby greeting.rb
+$ python greeting.py
 $
 ```
 
-You'll notice that when you run your program, nothing happens. Your program successfully defined the method but it never executed it. Just because you built a machine doesn't mean that you turned it on. Update your `greeting.rb` to entirely read:
+You'll notice that when you run your program, nothing happens. Your program successfully defined the function but it never executed it.
+Just because you built a function, it doesn't execute without being 'called'. Update your `greeting.py` to read:
 
-File: `greeting.rb`
+File: `greeting.py`
 
-```ruby
-def greeting
-  puts "Hello World"
-end
+```python
+def greeting():
+  print "hello"
 
-greeting
+greeting()
 ```
 
-Save your file and run it with `ruby greeting.rb`. You'll see:
+Save your file and run it with `python greeting.py`. You'll see:
 
 ```bash
-$ ruby greeting.rb
-Hello World
+$ python greeting.py
+hello
 $
 ```
 
-Now your program actually executed the program. Update the code again to entirely read:
+Now your program actually executed the program. Update the code again to read:
 
-File: `greeting.rb`
+File: `greeting.py`
 
-```ruby
-def greeting
-  puts "Hello World"
-end
+```python
+def greeting():
+  print "hello"
 
-greeting
-greeting
-greeting
-greeting
-greeting
+greeting()
+greeting()
+greeting()
 ```
 
-Save your file and run it with `ruby greeting.rb`. You'll see:
+Save your file and run it with `python greeting.py`. You'll see:
 
 ```bash
-$ ruby greeting.rb
-Hello World
-Hello World
+$ python greeting.py
 Hello World
 Hello World
 Hello World
 $
 ```
 
-The bareword `greeting` will execute the body of the defined method.
+Every time you add a call to a function, in this case `greeting`, it'll execute the body of the defined function.
 
-> Note: Programmers love conventions, or agreed upon rules that help them talk to each other about code. A common convention for Ruby methods is to preface them with a #, and in subsequent lessons, you might see methods written with a `#` in front of the method name. This is so that other rubyists can instantly recognize it as a method, as opposed to a variable or a bareword or a class. For example, if a method is named 'greeting', rubyists will often refer to it as '#greeting'. But remember that when you write it in your code, it should be `greeting` and not `#greeting`.
-
-<a href='https://learn.co/lessons/ruby-methods-readme' data-visibility='hidden'>View this lesson on Learn.co</a>
+<a href='https://learn.co/lessons/python-methods-readme' data-visibility='hidden'>View this lesson on Learn.co</a>
