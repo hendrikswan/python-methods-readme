@@ -115,22 +115,34 @@ def greeting(): # Method Signature
   print "Hello World" # Method Body
 ```
 
-That first line, `def greeting():`, is called the function signature. The function signature defines the basic elements of the function including the name of the function (identifier), `greeting`. After the function identifier, you need to tell it what parameters the function expects. We'll be covering parameters in an upcoming lesson, so don't worry too much about that for now. After the  parameters, you need to tell it that what follows is the function's code block, and you do this by using a colon character `:`.
+That first line, `def greeting():`, is called the function signature. The function signature defines the basic elements of the function including the name of the function (identifier), `greeting`. After the function identifier, you need to tell it what parameters the function expects `()`. We'll be covering parameters in an upcoming lesson, so don't worry too much about that for now. After the parameters, you need to tell it that what follows is the function's code block, and you do this by using a colon character `:`.
 
-So to recap, a function definition in Python has 5 parts, with the first 4 used as the function's signature:
+So to recap, a function definition in Python has 5 parts, with the first 4 making up the function's signature:
 
 1. The `def` keyword
 2. The function's name, also known as it's identifier
-3. The function's parameters (more on this in upcoming lessons)
+3. The function's parameters `()` (more on this in upcoming lessons)
 4. The colon character `:` that tells it to start the function's code block
 5. The function's code block (the code that will execute when your function is called)
 
-What are code blocks? Once you've provided your function's signature, Python will use indentation (also known as whitespace) to figure out which of the following lines of code you want to be part of the function. This concept of what makes up a function is called a code block. Various other mechanisms in Python rely on code blocks, so you'll see this pattern again later in this course.
+What are code blocks? Once you've provided your function's signature, Python will use indentation (also known as whitespace) to figure out which of the following lines of code you want to be part of the function. This concept of what makes up a function is called a code block. Various other mechanisms in Python rely on code blocks, so you'll see a similar pattern repeated throughout in this course.
 
-How does it use indentation (whitespace) to identify my function's code block? After your function signature's `:` character, it will look for all lines with a deeper indentation depth than your function's signature definition, and deem those lines to be part of your function. The first subsequent line of code which is at the same or less indentation than your function's signature definition, will be deemed as the end of the function's block.
+How does Python use indentation (whitespace) to identify my function's code block? After your function signature's `:` character, it will look for all lines with a deeper indentation depth than your function's signature definition, and deem those lines to be part of your function. The first subsequent line of code which it finds with same or less indentation than your function's signature definition, is deemed as the end of the function's block.
+
+You might feel that the concept of *significant whitespace* seems a bit quirky. But it's also this exact same concept which lends Python it's expressiveness as a language, it makes it much easier to read and understand.
 
 
-You must terminate every opening `def` of a method with a corresponding `end` in order to close the method body. If you don't correctly `end` a method, your program will have unexpected results or break entirely because of a syntax error. A good practice is to define the method and then immediately close it before programming anything into the method.
+
+```python
+def greeting(): # this is the function's signature
+    print 'hello' # this is indented deeper than the function, and deemed as part of it's block
+    print 'bye' # this is also part of your function
+
+print 'what is in a greeting?' # this has the same indentation as the signature, and will not be seen as part of your function
+```
+
+There's a gotcha here! The indentation also needs to be consistent. This means that the first line in the block can't be 4 spaces indented from the start of the signature, with the second line indented 3 spaces from the
+
 
 ```ruby
 def greeting
