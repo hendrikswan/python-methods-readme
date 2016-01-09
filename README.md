@@ -16,7 +16,7 @@ This lesson shows you how to create and execute functions in Python.
 
 When you want to store data in a Python program so that you can refer to it again, you use variables; when you want to store behavior in a Python program so that you can execute it again, you use functions. Variables are like nouns, functions are like verbs.
 
-For example, imagine needing to say "Hello World!" ten times. You might do something like this:
+For example, imagine needing to say "Hello World!" 10 times. You might do something like this:
 
 ```python
 phrase = "Hello World!"
@@ -34,7 +34,7 @@ print phrase
 
 That does work, but it's very repetitive. You made use of a variable to encapsulate the data you wanted to print and then the next ten lines print the phrase.
 
-Now imagine later in your program you want to say "Hello World!" ten times again. The program would look something like this:
+Now imagine later in your program you want to say "Hello World!" 10 times again. The program would look something like this:
 
 ```python
 phrase = "Hello World!"
@@ -63,7 +63,7 @@ print phrase
 print phrase
 ```
 
-Using this approach, we have to repeat the code for printing the value of `phrase` ten times. Remember: variables store data, functions store behavior. Instead of repeating `print phrase` ten times, we should build a function for it. Think of this function as a little mini program that you can execute as many times as you want, but by calling it with code.
+Using this approach, we have to repeat the code for printing the value of `phrase` 10 times. Remember: variables store data, functions store behavior. Instead of repeating `print phrase` 10 times, we should build a function for it. Think of this function as a little mini program that you can execute as many times as you want, but by calling it with code.
 
 The function looks like this:
 
@@ -121,7 +121,7 @@ So to recap, a function definition in Python has 5 parts, with the first 4 makin
 
 1. The `def` keyword
 2. The function's name, also known as it's identifier
-3. The function's parameters `()` (more on this in upcoming lessons)
+3. The function's parameters `()` (more on this in an upcoming lesson)
 4. The colon character `:` that tells it to start the function's code block
 5. The function's code block (the code that will execute when your function is called)
 
@@ -144,7 +144,6 @@ print 'hi there' # not included in the function's block
 
 Because both `print 'hello'`, and `print 'bye'` are nested on a deeper level than the function signature, both lines are deemed as part of the function definition. Because `print 'hi there'` is on the same level as the function signature, it's deemed as a sibling code block, and therefore not part of the function.
 
-
 There's a gotcha here! The indentation also needs to be consistent. This means that the first line in the block can't be 4 spaces indented from the start of the signature, with the second line indented 3 spaces from the start of the signature. The first line of code that you provide after the function signature sets the shallowest indentation allowed for the block.
 
 Here's an example of using illegal indentation for a function definition. Because the `print 'bye'` line is not on the same level of indentation as the function signature, nor the same level as the first line, but shallower, this results in an error.
@@ -161,13 +160,11 @@ It's a few simple rules to be aware of, and we've handled most of the tricky syn
 
 ### Invoking a Function
 
-Once you define a function, you can execute the function whenever you want by using the function name in your code, followed by parameters.
+Once you define a function, you can execute the function whenever you want by using the function name in your code, followed by parameters `()`.
 
 ```python
 def greeting():
     print 'hello'
-
-
 
 greeting() # Executing the function
 #> "hello"
@@ -229,12 +226,12 @@ Save your file and run it with `python greeting.py`. You'll see:
 
 ```bash
 $ python greeting.py
-Hello World
-Hello World
-Hello World
+hello
+hello
+hello
 $
 ```
 
-Every time you add a call to a function, in this case `greeting`, it'll execute the body of the defined function.
+Every time you add a call to a function, in this case `greeting()`, it'll execute the body of the defined function.
 
 <a href='https://learn.co/lessons/python-methods-readme' data-visibility='hidden'>View this lesson on Learn.co</a>
