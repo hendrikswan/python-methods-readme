@@ -132,33 +132,31 @@ How does Python use indentation (whitespace) to identify my function's code bloc
 You might feel that the concept of *significant whitespace* seems a bit quirky. But it's also this exact same concept which lends Python it's expressiveness as a language, it makes it much easier to read and understand.
 
 
+Let's look at an example again:
 
 ```python
 def greeting(): # this is the function's signature
-    print 'hello' # this is indented deeper than the function, and deemed as part of it's block
-    print 'bye' # this is also part of your function
+    print 'hello' # included in the function's block
+    print 'bye'   # included in the function's block
 
-print 'what is in a greeting?' # this has the same indentation as the signature, and will not be seen as part of your function
-```
-
-There's a gotcha here! The indentation also needs to be consistent. This means that the first line in the block can't be 4 spaces indented from the start of the signature, with the second line indented 3 spaces from the
+print 'hi there' # not included in the function's block
 
 
-```ruby
-def greeting
-  # Leave a line break for the method body
-end # Immediately close the method.
-```
+Because both `print 'hello'`, and `print 'bye'` are nested on a deeper level than the function signature, both lines are deemed as part of the function definition. Because `print 'hi there'` is on the same level as the function signature, it's deemed as a sibling code block, and therefore not part of the function.
 
-Here we set up the method's structure first, ensuring a proper termination before adding any other complexity. It's also a great practice to indent methods correctly. The body of a method should be indented two (2) spaces, placing it visually within the method. When you `end` the method, go back to the same indentation of the `def`, aligning the opening and closing of the method visually.
 
-Then you can easily define the body of the method and never worry about forgetting to `end` the method.
+There's a gotcha here! The indentation also needs to be consistent. This means that the first line in the block can't be 4 spaces indented from the start of the signature, with the second line indented 3 spaces from the start of the signature. The first line of code that you provide after the function signature sets the shallowest indentation allowed for the block.
 
-```ruby
-def greeting
-  puts "Hello World" # Now code the body of the method.
-end
-```
+Here's an example of using illegal indentation for a function definition. Because the `print 'bye'` line is not on the same level of indentation as the function signature, nor the same level as the first line, but shallower, this results in an error.
+
+```python
+def greeting(): # this is the function's signature
+    print 'hello' # included in the function's block
+  print 'bye'   # causes a syntax error
+
+Don't worry if this sounds awfully technical and difficult, you'll get used to it very quickly. It's a few simple rules to be aware of, and we've handled the most tricky of the rules already.
+
+
 
 ### Invoking a Method
 
