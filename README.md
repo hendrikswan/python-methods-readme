@@ -32,9 +32,9 @@ print phrase
 print phrase
 ```
 
-That does work, but it's very repetitive. You made use of a variable to encapsulate the data you wanted to print and then the next ten lines literally print the phrase.
+That does work, but it's very repetitive. You made use of a variable to encapsulate the data you wanted to print and then the next ten lines print the phrase.
 
-Now imagine later in your program you again want to say "Hello World!" ten times. The entire program would look something like this:
+Now imagine later in your program you want to say "Hello World!" ten times again. The program would look something like this:
 
 ```python
 phrase = "Hello World!"
@@ -63,7 +63,7 @@ print phrase
 print phrase
 ```
 
-We have to repeat the code for printing the value of `phrase` ten times. Remember, variables store data, functions store behavior. Instead of repeating `print phrase` ten times, we should build a function for it. Think of this function as a little mini program that you can execute as many times as you want, but by calling it with code.
+Using this approach, we have to repeat the code for printing the value of `phrase` ten times. Remember: variables store data, functions store behavior. Instead of repeating `print phrase` ten times, we should build a function for it. Think of this function as a little mini program that you can execute as many times as you want, but by calling it with code.
 
 The function looks like this:
 
@@ -81,7 +81,7 @@ def say_hello_world_ten_times():
   print phrase
   print phrase
 ```
-Now, when we add code to call it by using it's name followed by two parentheses `say_hello_world_ten_times()` in our program, it will invoke the function, running the code within the function. Now that we know about functions, let's revisit the script above that says hello 10 times, then does something else before saying hello 10 times yet again.
+Now we can add code to 'call' the function. We do this by using the function name followed by two parentheses `say_hello_world_ten_times()`. This will 'invoke' the function, which means that  code within the function will execute. Now that we know about functions, let's see if we can't do something better with the script above that says hello 10 times, then does something else before saying hello 10 times yet again.
 
 ```python
 def say_hello_world_ten_times():
@@ -104,20 +104,31 @@ say_hello_world_ten_times()
 say_hello_world_ten_times()
 ```
 
-That's way cleaner. We define the abstraction, or the mini program, `say_hello_world_ten_times` once, but can "call" or "invoke" it (make it run) as many times as we want. Let's look at functions in a bit more detail.
+That's way cleaner, don't you think? We define the abstraction, the mini program, `say_hello_world_ten_times` once, but can "call" or "invoke" it (make it run) as many times as we want. Let's look at functions in a bit more detail.
 
 ### Defining a Function
 
-You can define a function in Python with the `def` keyword. A method's name can begin with any lowercase letter. Here's a quick example:
+To define a function in Python, you need to use the `def` keyword. A function's name can begin with any alphabetical letter. Most Python programmers use only lowercase letters for their functions. Here's a quick example:
 
 ```python
 def greeting(): # Method Signature
   print "Hello World" # Method Body
 ```
 
-That first line, `def greeting`, is called the method signature, it defines the basic properties of the method including the name of the method, `greeting`.
+That first line, `def greeting():`, is called the function signature. The function signature defines the basic elements of the function including the name of the function (identifier), `greeting`. After the function identifier, you need to tell it what parameters the function expects. We'll be covering parameters in an upcoming lesson, so don't worry too much about that for now. After the  parameters, you need to tell it that what follows is the function's code block, and you do this by using a colon character `:`.
 
-Once you open a method definition with the `def` keyword, all subsequent lines in your program are considered the method's body, the actual procedure or code that your method will run every time it's called.
+So to recap, a function definition in Python has 5 parts, with the first 4 used as the function's signature:
+
+1. The `def` keyword
+2. The function's name, also known as it's identifier
+3. The function's parameters (more on this in upcoming lessons)
+4. The colon character `:` that tells it to start the function's code block
+5. The function's code block (the code that will execute when your function is called)
+
+What are code blocks? Once you've provided your function's signature, Python will use indentation (also known as whitespace) to figure out which of the following lines of code you want to be part of the function. This concept of what makes up a function is called a code block. Various other mechanisms in Python rely on code blocks, so you'll see this pattern again later in this course.
+
+How does it use indentation (whitespace) to identify my function's code block? After your function signature's `:` character, it will look for all lines with a deeper indentation depth than your function's signature definition, and deem those lines to be part of your function. The first subsequent line of code which is at the same or less indentation than your function's signature definition, will be deemed as the end of the function's block.
+
 
 You must terminate every opening `def` of a method with a corresponding `end` in order to close the method body. If you don't correctly `end` a method, your program will have unexpected results or break entirely because of a syntax error. A good practice is to define the method and then immediately close it before programming anything into the method.
 
